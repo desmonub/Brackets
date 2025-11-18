@@ -428,16 +428,30 @@ fullscreenBtn.addEventListener('click', () => {
     // Enter fullscreen
     bracketWrapper.classList.add('fullscreen-mode');
     bracketEl.classList.add('fullscreen');
-    mainElement.style.display = 'none';
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('fullscreen-active');
     fullscreenBtn.textContent = '⛶ Exit Fullscreen';
+    fullscreenBtn.classList.add('active');
+    
+    // Try to use Fullscreen API if available
+    if (bracketWrapper.requestFullscreen) {
+      bracketWrapper.requestFullscreen().catch(err => {
+        console.log('Fullscreen request failed:', err);
+      });
+    }
   } else {
     // Exit fullscreen
     bracketWrapper.classList.remove('fullscreen-mode');
     bracketEl.classList.remove('fullscreen');
-    mainElement.style.display = 'grid';
-    document.body.style.overflow = 'auto';
+    document.body.classList.remove('fullscreen-active');
     fullscreenBtn.textContent = '⛶ Fullscreen';
+    fullscreenBtn.classList.remove('active');
+    
+    // Exit Fullscreen API if active
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(err => {
+        console.log('Exit fullscreen failed:', err);
+      });
+    }
   }
   // Re-render to adjust grid on fullscreen toggle
   if (bracketState) renderBracket();

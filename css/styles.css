@@ -238,6 +238,16 @@ button:disabled {
   border-radius: 0;
   margin: 0;
   padding: 20px;
+  background: linear-gradient(135deg, #0a0e27 0%, #15172e 50%, #0a0e27 100%);
+  overflow: auto;
+}
+body.fullscreen-active {
+  overflow: hidden;
+}
+#fullscreenBtn.active {
+  background: rgba(255, 107, 157, 0.2);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 .bracket-empty { 
   font-size: 0.95rem; 

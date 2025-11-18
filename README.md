@@ -23,18 +23,9 @@ A single-elimination tournament bracket generator for organizing anime-themed co
 - Modern web browser with JavaScript enabled
 - No dependencies or installation required
 
-## Installation
-
-1. Clone this repository:
-```bash
-git clone https://github.com/your-username/Brackets.git
-```
-
-2. Open `index.html` in your web browser
-
 ## Live Demo
 
-Visit the live demo on GitHub Pages: [your-github-pages-link]
+Visit the live demo on GitHub Pages: [https://desmonub.github.io/Brackets/]
 
 ## Technical Stack
 
