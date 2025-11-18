@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Anime Night Tournament</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1><span></span> Anime Night Tournament</h1>
+      <div class="sub">Single-elimination • Click to advance winners</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Participants <span class="badge">Add</span></h2>
+      <p>Enter participant names (one per line), then click <strong>Generate Tournament</strong>.</p>
+
+      <label for="playersInput">Names</label>
+      <textarea id="playersInput" placeholder="Participant 1
+Participant 2
+Participant 3
+..."></textarea>
+
+      <div class="hint">• Minimum: 2 participants &nbsp;• Maximum: 128 participants</div>
+
+      <div class="controls">
+        <button class="primary" id="generateBtn">Generate Tournament</button>
+        <button class="secondary" id="sampleBtn">Sample (8)</button>
+        <button class="danger" id="clearBtn">Clear</button>
+      </div>
+
+      <div id="error"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Tournament <span class="badge">Live</span></h2>
+      <p>Click a participant name to advance them to the next round.</p>
+
+      <div class="bracket-controls">
+        <button class="secondary" id="fullscreenBtn">⛶ Fullscreen</button>
+      </div>
+
+      <div class="bracket-wrapper">
+        <div id="bracketEmpty" class="bracket-empty">No tournament yet. Add participants and click <strong>Generate Tournament</strong>.</div>
+        <div id="bracket" class="bracket" style="display:none;"></div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot accent"></span>Click name → advance to next round</div>
+        <div class="legend-item"><span class="legend-dot"></span>BYE placeholder when odd number of participants</div>
+      </div>
+      
+      <div style="margin-top: 16px; padding: 12px; background: rgba(148,163,184,0.05); border-radius: 8px; border-left: 3px solid rgba(148,163,184,0.3); font-size: 0.75rem; color: var(--muted); line-height: 1.6;">
+        <strong style="color: var(--text);">ℹ️ Info:</strong> Make sure to have an even number of participants to avoid empty slots in later rounds. Odd numbers will create BYE placeholders.
+      </div>
+    </section>
+  </main>
+
+  <footer>Single-elimination tournament bracket.</footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
